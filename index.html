@@ -1,15 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Greek gods</title>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Belly Button Biodiversity</title>
+  <link 
+    rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="static/css/style.css">
+
 </head>
+
 <body>
-    <div id="plot"></div>
-    <script src="data.js"></script>
-    <script src="plots.js"></script>
+  <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+    <a class="navbar-brand" href="index.html">Reset</a>
+</nav>
+  <div class="container p-3 my-3 text-info">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1><u>Belly Button Biodiversity Dashboard</u></h1>
+        <p>Use the interactive charts below to explore the dataset</p> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Test Subject ID No.:</h5>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="bar"></div>
+        <p> The bar chart presented here gives information on the top 10 bacteria culture types that were present in this indivduals navel at the time the sample was taken.</p>
+      </div>
+      <div class="col-md-5">
+        <div id="gauge"></div>
+        <p> The gauge chart presented here gives the viewer an indication on what the researcher views as good to bad. For the purposes of this research a higher frequency of washing the navel is preferred. But we will leave it up to the reader to determine if longer wait times betwwen washing caused a higher amount of bacteria cultures</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+        <p> Using the bubble chart here, you can filter though our list of participants and make your own call as to which factors lend themselves to higher bacteria cultures.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="charts.js"></script>
+
 </body>
+
 </html>
