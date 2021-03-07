@@ -94,7 +94,7 @@ function buildCharts(sample) {
         mode: 'markers',
         marker: {
             color: otu_ids,
-            colorscale: 'YlGnBu',
+            colorscale: 'Electric',
             size: sample_values
             },
         text: otu_labels}
@@ -113,7 +113,7 @@ function buildCharts(sample) {
     // 3. Use Plotly to plot the data with the layout.
     Plotly.newPlot('bubble', bubbleData, bubbleLayout)
 
-////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
     // Create a variable that holds the samples array. 
     var metadata = data.metadata;
     // Create a variable that filters the samples for the object with the desired sample number.
